@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#773a2a">
+  <meta name="description" content="Artikel populer tentang hubungan pendidikan dan budaya dalam membentuk generasi berkarakter.">
+  <title>Belajar dari Budaya, Tumbuh Berkarakter</title>
+  <style>
+    :root {
+      --ink: #27343a;
+      --muted: #687477;
+      --accent: #a34f35;
+      --accent-dark: #773a2a;
+      --paper: #fffefa;
+      --wash: #f7f1e8;
+      --line: #eadfd4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body {
+      margin: 0; padding: 24px 14px;
+      color: var(--ink);
+      background: linear-gradient(135deg, #eee9df, #f8f5ef 55%, #e9eee9);
+      font: 18px/1.75 Georgia, "Times New Roman", serif;
+    }
+    .container {
+      width: min(100%, 900px); margin: 24px auto; padding: 48px 58px;
+      background: var(--paper); border: 1px solid rgba(120,91,66,.12);
+      border-radius: 12px; box-shadow: 0 18px 55px rgba(54,48,38,.12);
+    }
+    header {
+      margin-bottom: 34px; padding: 32px 24px;
+      text-align: center; border-radius: 14px;
+      color: white; background: linear-gradient(135deg, #773a2a, #a34f35 58%, #c47b4d);
+    }
+    .eyebrow {
+      margin: 0 0 12px; color: #f3d6bc; font: 700 .72rem/1.5 Arial,sans-serif;
+      letter-spacing: .14em; text-transform: uppercase;
+    }
+    h1 { margin: 0 0 12px; font: 700 clamp(2rem,5vw,3.1rem)/1.2 Georgia,serif; }
+    .subtitle { max-width: 620px; margin: auto; color: #fff1e7; }
+    .byline { margin: 16px 0 0; color: #f3d6bc; font: 700 .8rem Arial,sans-serif; letter-spacing: .08em; }
+    .group-members {
+      width: fit-content; max-width: 100%; margin: 18px auto 0; padding: 9px 16px;
+      border: 1px solid #ffffff55; border-radius: 10px; color: white;
+      background: #ffffff18; font: .9rem/1.6 Arial,sans-serif;
+    }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 22px; }
+    nav a {
+      padding: 7px 12px; border: 1px solid #ffffff55; border-radius: 999px;
+      color: white; background: #ffffff18; font: .85rem Arial,sans-serif; text-decoration: none;
+    }
+    nav a:hover, nav a:focus-visible { background: #ffffff35; }
+    section { margin: 28px 0; }
+    section.content-section {
+      padding: 22px 26px; border: 1px solid #eee5db; border-radius: 12px;
+      background: #fffefa; box-shadow: 0 8px 22px rgba(54,48,38,.04);
+    }
+    h2 { margin: 0 0 16px; color: var(--accent-dark); font-size: 1.65rem; line-height: 1.3; }
+    h3 { margin: 24px 0 8px; color: #486650; font-size: 1.25rem; }
+    p { margin: 10px 0 14px; }
+    .abstrak, .info-box, .interview, .fun-ending {
+      padding: 22px 24px; border: 1px solid var(--line); border-left: 5px solid var(--accent);
+      border-radius: 8px; background: var(--wash);
+    }
+    .abstrak h2 { margin-top: 0; }
+    .info-box { margin: 24px 0; }
+    .info-box p, .interview p, .fun-ending p { margin-bottom: 0; }
+    .interview-question { color: var(--accent-dark); font-weight: bold; }
+    a { color: var(--accent-dark); overflow-wrap: anywhere; }
+    a:hover { color: var(--accent); }
+    .daftar-pustaka { padding-left: 26px; }
+    .daftar-pustaka li { margin: 0 0 14px; padding-left: 6px; overflow-wrap: anywhere; }
+    .comments { padding-top: 8px; }
+    .comment-form { display: grid; gap: 14px; padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--wash); }
+    .comment-form label { display: grid; gap: 6px; color: var(--accent-dark); font-weight: bold; }
+    .comment-form input, .comment-form textarea {
+      width: 100%; padding: 11px 12px; border: 1px solid #d8cbbd; border-radius: 5px;
+      color: var(--ink); background: white; font: inherit;
+    }
+    .comment-form textarea { min-height: 110px; resize: vertical; }
+    button { font: inherit; cursor: pointer; touch-action: manipulation; }
+    .comment-form button, .joke-button {
+      justify-self: start; padding: 10px 18px; border: 0; border-radius: 6px;
+      color: white; background: var(--accent-dark);
+    }
+    .comment-form button:hover, .joke-button:hover { background: var(--accent); }
+    button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible {
+      outline: 3px solid #a34f3555; outline-offset: 3px;
+    }
+    .comment-list { display: grid; gap: 12px; padding: 0; list-style: none; }
+    .comment-item { padding: 15px 17px; border: 1px solid var(--line); border-radius: 7px; background: white; overflow-wrap: anywhere; }
+    .comment-item strong { color: var(--accent-dark); }
+    .comment-date { margin-left: 8px; color: var(--muted); font-size: .82em; }
+    .comment-item p, .empty-comments { margin: 8px 0 0; white-space: pre-wrap; }
+    .empty-comments { color: var(--muted); }
+    .fun-ending { border-left-width: 1px; }
+    .joke-question { min-height: 1.7em; margin: 14px 0 8px !important; font-weight: bold; }
+    .fun-answer { margin-top: 10px !important; padding: 12px 14px; border-radius: 6px; background: white; }
+    .fun-closing { margin-top: 18px !important; color: var(--muted); }
+    footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .85rem; }
+    @media (max-width: 640px) {
+      body { padding: 8px; font-size: 16px; }
+      .container { margin: 8px auto; padding: 18px 14px; border-radius: 8px; }
+      header { padding: 26px 15px; }
+      section.content-section { padding: 18px 15px; }
+      h2 { font-size: 1.4rem; }
+      .abstrak, .info-box, .interview, .fun-ending { padding: 18px 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      body { padding: 0; color: #222; background: white; font-size: 12pt; }
+      .container { width: 100%; margin: 0; padding: 1.5cm; border: 0; border-radius: 0; box-shadow: none; }
+      header { padding: 0 0 20px; color: #222; background: white; box-shadow: none; }
+      header h1, header .subtitle, header .byline, header .eyebrow, header .group-members { color: #222; }
+      header .group-members, nav a { border: 1px solid #ccc; background: white; color: #222; }
+      nav, .comment-form, .fun-ending { display: none !important; }
+      section.content-section, .abstrak, .interview { break-inside: avoid; box-shadow: none; }
+      a { color: #222; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+<main class="container">
+  <header>
+    <p class="eyebrow">Ruang Belajar · Budaya Indonesia</p>
+    <h1>Belajar dari Budaya, Tumbuh Berkarakter</h1>
+    <div class="subtitle">Dari bahasa daerah hingga gotong royong, budaya bisa membuat pembelajaran lebih dekat dengan kehidupan anak muda.</div>
+    <p class="byline">Artikel populer · Pendidikan dan budaya</p>
+    <p class="group-members"><strong>Kelompok 2:</strong> Rizky Herdanto, Angga, Agas, Arvi, Reza, dan Windi</p>
+    <nav aria-label="Navigasi artikel">
+      <a href="#pengantar">Pengantar</a><a href="#isi">Isi Artikel</a><a href="#wawancara">Wawancara</a><a href="#referensi">Referensi</a><a href="#komentar">Komentar</a>
+    </nav>
+  </header>
+
+  <section class="abstrak" id="pengantar">
+    <h2>Kenapa budaya perlu hadir di sekolah?</h2>
+    <p>Belajar budaya bukan sekadar menghafal nama tarian atau pakaian tradisional. Ketika siswa memainkan alat musik daerah, menyimak cerita rakyat, atau bergotong royong, mereka sekaligus belajar mengenali identitas, peduli pada sesama, dan menghargai perbedaan.</p>
+    <p>Pengalaman seperti ini bisa dihadirkan oleh sekolah, keluarga, dan masyarakat—termasuk dengan bantuan teknologi. Yang penting, budaya dikenalkan dengan cara menarik tanpa kehilangan maknanya.</p>
+  </section>
+
+  <section class="content-section" id="isi">
+    <h2>Budaya bukan sekadar warisan masa lalu</h2>
+    <p>Pendidikan membantu seseorang menambah pengetahuan, mengembangkan keterampilan, dan membentuk sikap untuk kehidupan sehari-hari. Karena itu, keberhasilannya tidak cukup diukur dari nilai akademik. Sikap hormat, jujur, bertanggung jawab, dan peduli pada lingkungan sosial juga merupakan bagian penting dari proses belajar.</p>
+    <p>Nilai-nilai tersebut tumbuh dalam kehidupan sehari-hari, termasuk melalui budaya. Budaya mencakup bahasa, kesenian, tradisi, kebiasaan, dan cara hidup. Di Indonesia, kekayaan ini tampak dalam batik, angklung, tari tradisional, bahasa daerah, hingga gotong royong—semuanya menjadi bagian dari identitas bangsa.</p>
+    <p>Di sinilah pendidikan dan budaya saling menguatkan. Pendidikan mengenalkan dan mengembangkan kebudayaan, sementara budaya memberi konteks yang dekat dengan hidup peserta didik. Dengan memadukan keduanya, sekolah dapat mengajarkan ilmu pengetahuan sekaligus menanamkan nilai budaya yang positif.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Ketika pendidikan bertemu budaya</h2>
+    <p>Hubungan pendidikan dan budaya terlihat dalam cara kita belajar. Pendidikan membantu seseorang memahami nilai yang hidup di masyarakat, sementara budaya ikut membentuk perilaku. Maka, proses belajar tak hanya berlangsung di kelas, tetapi juga melalui pengalaman bersama keluarga dan masyarakat.</p>
+    <p>Gagasan Ki Hadjar Dewantara tentang pendidikan yang berakar pada kebudayaan bangsa memperkuat hubungan tersebut. Pendidikan perlu membantu peserta didik mengembangkan diri tanpa kehilangan jati diri. Generasi muda perlu menguasai ilmu pengetahuan dan teknologi, sekaligus memahami budaya yang membentuk identitasnya.</p>
+    <p>Sejalan dengan itu, <a href="#ref-musanna">Musanna (2017)</a> menekankan pentingnya warisan budaya sebagai landasan pendidikan. Nilai budaya dapat membantu membentuk karakter, tetapi penerapannya perlu mengikuti perkembangan zaman. Budaya bukan hanya diwariskan begitu saja; nilai-nilainya perlu dipahami secara kritis agar tetap bermakna dalam kehidupan modern.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Bagaimana sekolah merawat budaya?</h2>
+    <aside class="info-box"><p><strong>Ingat:</strong> Budaya lebih mudah dipahami ketika siswa mengalaminya langsung, bukan hanya menghafal nama dan sejarahnya.</p></aside>
+    <h3>Mengenalkan budaya dengan pengalaman langsung</h3>
+    <p>Sekolah bisa menjadi ruang pertama bagi siswa untuk mengenal kekayaan budaya Indonesia melalui pelajaran seni dan sejarah, bahasa daerah, ekstrakurikuler, atau kunjungan ke tempat bersejarah. Dengan pengalaman langsung, siswa tak hanya menghafal nama tradisi, tetapi juga memahami makna di baliknya. Pendekatan ini sejalan dengan Konvensi UNESCO 2003 yang mendorong pendidikan dan kesadaran untuk menghargai warisan budaya takbenda <a href="#ref-unesco">(UNESCO, 2003)</a>.</p>
+    <h3>Belajar menghargai perbedaan</h3>
+    <p>Pengalaman budaya juga membantu membentuk karakter. Gotong royong, musyawarah, sopan santun, dan sikap saling menghormati bisa diterapkan dalam kegiatan belajar maupun keseharian. Saat mengenal budaya yang berbeda, siswa pun berlatih memahami dan menghargai perbedaan.</p>
+    <p>Pentingnya pembentukan karakter ini sejalan dengan kajian <a href="#ref-damayanti">Damayanti, Japar, dan Maiwan (2021)</a> tentang pemikiran Ki Hadjar Dewantara mengenai budi pekerti. Pendidikan bukan hanya soal pengetahuan, tetapi juga tentang sikap dan perilaku.</p>
+    <p>Agar nilai-nilai itu terasa dekat, sekolah dapat membangun kebiasaan positif dan menyediakan ruang bagi kegiatan seni. Permainan tradisional juga bisa menjadi pilihan yang seru sekaligus mengajak siswa mencoba alternatif hiburan modern.</p>
+    <h3>Mengembangkan budaya dengan kreativitas</h3>
+    <p>Melestarikan budaya bukan berarti menolak perubahan. Generasi muda justru bisa memanfaatkan kreativitas dan media digital untuk memperkenalkannya lewat video edukasi, poster, pameran, atau pertunjukan seni. Misalnya, siswa dapat membuat video tentang proses membatik atau mengenalkan alat musik tradisional di media sosial.</p>
+    <p>Teknologi pun dapat memperluas jangkauan pengenalan budaya. Bentuk penyajiannya boleh berubah, asalkan nilai dan maknanya tetap dijaga agar identitas budaya tidak memudar.</p>
+  </section>
+
+  <section class="interview" id="wawancara">
+    <h2>Hasil wawancara</h2>
+    <p><strong>Narasumber: Encep Turnawan</strong> menilai pendidikan budaya penting untuk membentuk karakter siswa sekaligus menjaga ciri khas bangsa. Menurutnya, sekolah dapat mengenalkan budaya lewat pembiasaan dan kegiatan seni. Generasi muda juga berperan dengan mengapresiasi serta ikut serta dalam kegiatan budaya, termasuk permainan tradisional.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Tantangan merawat budaya di era digital</h2>
+    <p>Teknologi dan globalisasi membuka banyak peluang bagi pendidikan. Informasi lebih mudah diakses, komunikasi berlangsung cepat, dan siswa dapat mengenal budaya dari berbagai negara. Namun, kemudahan ini juga menghadirkan tantangan: bagaimana menjaga budaya lokal tetap hidup?</p>
+    <p>Salah satu tantangannya ialah minat sebagian generasi muda terhadap bahasa daerah, permainan tradisional, dan kesenian lokal yang mulai berkurang. Hiburan digital mudah menyita perhatian, sehingga kegiatan budaya di sekitar mereka kerap terabaikan.</p>
+    <p>Tantangan berikutnya adalah membuat pembelajaran budaya terasa relevan. Jika hanya mengandalkan hafalan, siswa mungkin sulit melihat manfaatnya. Sekolah dapat menawarkan pengalaman yang lebih nyata, seperti praktik kesenian, dokumentasi tradisi lokal, diskusi dengan tokoh budaya, atau proyek bersama masyarakat.</p>
+    <p>Pentingnya kerja bersama ini juga tercermin dalam kajian <a href="#ref-zahrani">Zahrani dan rekan-rekannya (2024)</a> tentang sinergi pendidikan dan kebudayaan dalam pemikiran Ki Hadjar Dewantara. Pelestariannya perlu melibatkan sekolah, keluarga, dan masyarakat.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Langkah sederhana yang bisa dilakukan bersama</h2>
+    <p>Keluarga dapat mengenalkan bahasa daerah, cerita rakyat, dan kebiasaan positif sejak dini. Sekolah bisa memasukkan kegiatan budaya ke dalam pelajaran dan ekstrakurikuler. Masyarakat dapat mengajak generasi muda terlibat dalam kesenian, tradisi, dan pelestarian tempat bersejarah.</p>
+    <p>Dukungan pemerintah dan lembaga kebudayaan juga penting, misalnya melalui penyediaan fasilitas, dokumentasi, dan program pendidikan tentang warisan lokal. Generasi muda dapat melengkapi upaya ini dengan menggunakan teknologi secara bijak untuk merekam tradisi dan menyebarkan informasi yang akurat.</p>
+    <p>Agar hasilnya bertahan, semua upaya tersebut perlu dilakukan secara konsisten. Pelestarian budaya bukan sekadar menggelar acara tahunan, melainkan membangun kebiasaan untuk memahami, menghargai, dan menerapkan nilai-nilai budaya dalam kehidupan sehari-hari.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Contoh kegiatan budaya yang mudah dilakukan</h2>
+    <h3>Mengumpulkan cerita dari keluarga</h3>
+    <p>Siswa bisa mewawancarai orang tua atau kakek-nenek tentang cerita rakyat, makanan khas, permainan masa kecil, atau kebiasaan dari daerah asal keluarga. Hasilnya dapat dirangkum menjadi tulisan atau poster dengan mencantumkan nama narasumber.</p>
+    <h3>Mencoba permainan tradisional</h3>
+    <p>Sekolah dapat mengajak siswa mencoba permainan tradisional setempat. Selain bergerak dan bekerja sama, mereka bisa membahas aturan permainan serta nilai kejujuran, sportivitas, dan kebersamaan.</p>
+    <h3>Membuat peta budaya lingkungan</h3>
+    <p>Dalam kelompok, siswa dapat memetakan kesenian, bahasa, makanan, tempat bersejarah, atau tradisi di lingkungan sekitar. Agar informasinya akurat dan tetap menghormati makna budaya, siswa sebaiknya memeriksanya bersama warga atau narasumber.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Penutup: Maju tanpa kehilangan akar</h2>
+    <p>Pendidikan dan budaya saling mendukung dalam membentuk generasi yang berpengetahuan, berkarakter, dan menghargai keberagaman. Pendidikan mengenalkan budaya, menanamkan nilai moral, dan menumbuhkan toleransi. Budaya, pada gilirannya, membantu siswa memahami identitas serta kehidupan masyarakatnya.</p>
+    <p>Di tengah perkembangan teknologi dan globalisasi, keduanya perlu disikapi dengan bijak. Teknologi dapat memperkenalkan budaya kepada khalayak yang lebih luas, sementara pendidikan membekali generasi muda agar memahaminya secara kritis dan bertanggung jawab. Dengan kerja sama keluarga, sekolah, masyarakat, dan pemerintah, pendidikan dapat terus maju tanpa memutus akar budaya.</p>
+  </section>
+
+  <section class="content-section" id="referensi">
+    <h2>Daftar Pustaka</h2>
+    <ol class="daftar-pustaka">
+      <li id="ref-damayanti">Damayanti, A., Japar, M., &amp; Maiwan, M. (2021). Pemikiran Ki Hadjar Dewantara tentang budi pekerti. <em>Jurnal Pendidikan Kewarganegaraan, 11</em>(2). <a href="https://ppjp.ulm.ac.id/journal/index.php/pkn/article/view/12252" target="_blank" rel="noopener noreferrer">Baca sumber</a>.</li>
+      <li id="ref-musanna">Musanna, A. (2017). Indigenisasi pendidikan: Rasionalitas revitalisasi praksis pendidikan Ki Hadjar Dewantara. <em>Jurnal Pendidikan dan Kebudayaan, 2</em>(1), 117–133. <a href="https://doi.org/10.24832/jpnk.v2i1.529" target="_blank" rel="noopener noreferrer">https://doi.org/10.24832/jpnk.v2i1.529</a>.</li>
+      <li id="ref-zahrani">Zahrani, A. M., Aisy, D. N. R., Frederica, H., Sholihah, I. F., Wahyuni, L., Kusumaningtyas, V. A., &amp; Widyartono, D. (2024). Sinergisitas pendidikan dan kebudayaan dalam pandangan Ki Hadjar Dewantara. <em>Jurnal Integrasi dan Harmoni Inovatif Ilmu-Ilmu Sosial, 4</em>(4). <a href="https://doi.org/10.17977/um063v4i4p2" target="_blank" rel="noopener noreferrer">https://doi.org/10.17977/um063v4i4p2</a>.</li>
+      <li id="ref-unesco">UNESCO. (2003). <em>Convention for the Safeguarding of the Intangible Cultural Heritage</em>. <a href="https://ich.unesco.org/en/convention-00022" target="_blank" rel="noopener noreferrer">Baca konvensi UNESCO</a>.</li>
+    </ol>
+  </section>
+
+  <section class="comments" id="komentar">
+    <h2>Komentar</h2>
+    <form class="comment-form" id="comment-form">
+      <label for="comment-name">Nama
+        <input id="comment-name" name="name" type="text" maxlength="60" autocomplete="name" required>
+      </label>
+      <label for="comment-message">Tulis komentar
+        <textarea id="comment-message" name="message" maxlength="1000" required></textarea>
+      </label>
+      <button type="submit">Kirim komentar</button>
+    </form>
+    <ul class="comment-list" id="comment-list" aria-live="polite"></ul>
+  </section>
+
+  <section class="fun-ending">
+    <h2>Hiburan kecil sebelum pulang 😊</h2>
+    <p>Siap menerima tebak-tebakan receh random?</p>
+    <button class="joke-button" id="joke-button" type="button">Kasih tebak-tebakan! 🎲</button>
+    <p class="joke-question" id="joke-question" aria-live="polite">Tekan tombolnya—jangan takut, yang diuji cuma selera humor!</p>
+    <details id="joke-answer" hidden>
+      <summary>Lihat jawaban</summary>
+      <p class="fun-answer" id="joke-answer-text"></p>
+    </details>
+    <p class="fun-closing">Terima kasih sudah membaca. Semoga harimu sehangat gotong royong dan seceria bunyi angklung! 🌼</p>
+  </section>
+
+  <footer>Artikel Ilmiah Populer: Pendidikan dan Budaya</footer>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  const jokes = [
+    { question: "Sayur apa yang paling dingin?", answer: "Kol-kas. 🥬" },
+    { question: "Buah apa yang durhaka?", answer: "Melon Kundang. 🍈" },
+    { question: "Ikan apa yang suka berhenti sebentar?", answer: "Ikan pause. 🐟" },
+    { question: "Kenapa komputer bisa masuk angin?", answer: "Karena kebanyakan buka Windows. 🪟" },
+    { question: "Apa bahasa Inggrisnya nasi?", answer: "Rice. Kalau nasi goreng, fried rice. 🍚" },
+    { question: "Hewan apa yang paling kaya?", answer: "Beruang, soalnya punya banyak uang. 🐻" },
+    { question: "Kenapa pintu nggak pernah sombong?", answer: "Karena selalu terbuka. 🚪" },
+    { question: "Kopi apa yang bikin capek?", answer: "Kopikirin terus. ☕" },
+    { question: "Kenapa kalender kelihatan kurus?", answer: "Karena tanggalnya terus berkurang. 📅" },
+    { question: "Benda apa yang kalau dipukul malah bunyi?", answer: "Bedug. 🥁" }
+  ];
+
+  const jokeButton = document.getElementById("joke-button");
+  const jokeQuestion = document.getElementById("joke-question");
+  const jokeAnswer = document.getElementById("joke-answer");
+  const jokeAnswerText = document.getElementById("joke-answer-text");
+  let previousJoke = -1;
+
+  jokeButton.addEventListener("click", () => {
+    let index = Math.floor(Math.random() * jokes.length);
+    if (jokes.length > 1 && index === previousJoke) index = (index + 1) % jokes.length;
+    previousJoke = index;
+    jokeQuestion.textContent = jokes[index].question;
+    jokeAnswerText.textContent = jokes[index].answer;
+    jokeAnswer.hidden = false;
+    jokeAnswer.open = false;
+  });
+
+  const form = document.getElementById("comment-form");
+  const list = document.getElementById("comment-list");
+  const storageKey = "artikel-budaya-comments-v1";
+  let comments = [];
+
+  function readComments() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(item =>
+        item && typeof item.name === "string" &&
+        typeof item.message === "string" &&
+        typeof item.date === "string"
+      ).slice(0, 100);
+    } catch {
+      return [];
+    }
+  }
+
+  function renderComments() {
+    list.replaceChildren();
+    if (comments.length === 0) {
+      const empty = document.createElement("li");
+      empty.className = "empty-comments";
+      empty.textContent = "Belum ada komentar. Jadilah yang pertama!";
+      list.append(empty);
+      return;
+    }
+
+    comments.forEach(comment => {
+      const item = document.createElement("li");
+      item.className = "comment-item";
+      const author = document.createElement("strong");
+      author.textContent = comment.name;
+      const date = document.createElement("span");
+      date.className = "comment-date";
+      date.textContent = comment.date;
+      const message = document.createElement("p");
+      message.textContent = comment.message;
+      item.append(author, date, message);
+      list.append(item);
+    });
+  }
+
+  comments = readComments();
+  renderComments();
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    if (!name || !message) return;
+
+    comments.unshift({
+      name: name.slice(0, 60),
+      message: message.slice(0, 1000),
+      date: new Intl.DateTimeFormat("id-ID", { dateStyle: "medium" }).format(new Date())
+    });
+    comments = comments.slice(0, 100);
+
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(comments));
+    } catch (error) {
+      // Komentar tetap ditampilkan selama halaman ini masih terbuka.
+      console.warn("Penyimpanan komentar tidak tersedia di browser ini.", error);
+    }
+
+    renderComments();
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
